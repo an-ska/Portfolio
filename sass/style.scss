@@ -1,0 +1,132 @@
+
+$mobile:'(max-width: 400px)';
+@mixin mobile {
+    @media #{$mobile} {
+        @content;
+    }
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+body {
+    width: 100%;
+    background: rgba(0,0,0,1);
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=0 );
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row::before, .row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.col-6, .col-12 {
+    width: 100%;
+}
+.bhagaskara, .sit-on-chair {
+    margin: 20px auto 0 auto;
+    color: white;
+    ul {
+        list-style-type: none;
+        font-size: 28px;
+        @include mobile {
+            font-size: 20px;
+        }
+        li {
+            text-align: center;
+            text-shadow: 1px 0px 1px white;
+            cursor: default;
+        }
+        a {
+            text-decoration: none;
+            img {
+                display: block;
+                margin: 30px auto 30px auto;
+                box-shadow: 0px 0px 20px black;
+                -webkit-filter: grayscale(100%);
+                -ms-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                filter: grayscale(100%);
+                -webkit-transition: 0.2s ease-in;
+                -webkit-transform: scale(1);
+                -ms-transition: 0.2s ease-in;
+                -ms-transform: scale(1);
+                -moz-transition: 0.2s ease-in;
+                -moz-transform: scale(1);
+                transition: 0.2s ease-in;
+                transform: scale(1);
+                @include mobile {
+                    width: 80%;
+                    height: 80%;
+                }
+                &:hover {
+                    -webkit-filter: grayscale(0%);
+                    -ms-filter: grayscale(0%);
+                    -moz-filter: grayscale(0%);
+                    filter: grayscale(0%);
+                    -webkit-transition: 0.2s ease-in;
+                    -webkit-transform: scale(1.05);
+                    -ms-transition: 0.2s ease-in;
+                    -ms-transform: scale(1.05);
+                    -moz-transition: 0.2s ease-in;
+                    -moz-transform: scale(1.05);
+                    transition: 0.2s ease-in;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+.bhagaskara {
+    img:hover {
+        box-shadow: 0px 0px 8px #600977;
+    }
+}
+.sit-on-chair {
+    img:hover {
+        box-shadow: 0px 0px 8px #23b89f;
+    }
+}
+footer {
+    p {
+        color: #d9d9d9;
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+.bhagaskara-title-hover {
+    color: #600977;
+}
+.sit-on-chair-title-hover {
+    color: #23b89f;
+}
+$colCount: 12;
+@for $i from 1 through $colCount {
+    .col-#{$i} {
+    width: ($i / $colCount) * 100%;
+    }
+}
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+}
+@media all and (max-width: 1000px) and (orientation: portrait) {
+    [class*='col-'] {
+        width: 100%;
+    }
+}

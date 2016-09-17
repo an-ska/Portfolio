@@ -1,0 +1,21 @@
+{
+  "name": "warsztat_koncowy",
+  "version": "1.0.0",
+  "description": "Warsztat koncowy kursu Coders Lab",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tomasz Los",
+  "license": "ISC"
+}
